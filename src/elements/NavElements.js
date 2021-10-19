@@ -9,7 +9,15 @@ export const NavWrapper = styled.nav`
   img {
     height: 45px;
     width: 4.2rem;
+    transition: filter 0.3s ease;
+    
   }
+
+  & img:hover, 
+        img:focus {
+        filter: brightness(110%);
+    }
+
 
   @media ${props => props.theme.breakpoints.tablet} {
     grid-column: 2 / span 6;
