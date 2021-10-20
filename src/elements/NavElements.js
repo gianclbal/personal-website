@@ -14,7 +14,7 @@ export const NavWrapper = styled.nav`
 
   & img:hover, 
         img:focus {
-        filter: brightness(110%);
+          filter: invert(30%) sepia(9%) saturate(2620%) hue-rotate(166deg) brightness(93%) contrast(86%);
     }
 
 

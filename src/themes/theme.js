@@ -17,6 +17,13 @@ export default {
         mobile: "only screen and (max-width: 50rem)",
         tablet: "only screen and (max-width: 65rem)",
     },
+    size: {
+        medium: "1.125rem",
+        small: "1rem",
+        xSmall: "0.875rem",
+        large: "1.5rem",
+        xLarge: "2.25rem",
+    },
     spacings: {
         xxSmall: ".25rem",
         xSmall: ".5rem",

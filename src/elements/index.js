@@ -5,3 +5,4 @@ export * from "./FooterElements";
 export * from "./HeroElements";
 export * from "./AboutElements";
 export * from "./TypographyElements";
+export * from "./ProjectElement";
