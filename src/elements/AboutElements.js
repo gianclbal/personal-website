@@ -2,10 +2,9 @@ import styled from "styled-components";
 
 export const AboutWrapper = styled.section`
     grid-column: 3 / span 10;
-    /* grid-row: 3 / 4; */
+    grid-row: 3 / 4;
     padding: 2rem 0;
     position: relative;
-    max-width: 900px;
 
     @media ${props => props.theme.breakpoints.tablet}{
         display: block;

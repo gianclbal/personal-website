@@ -4,6 +4,7 @@ import {
   FooterWrapper,
   FooterSocialWrapper,
   FooterSocialIcons,
+  P,
 } from "../elements"
 
 export const Footer = () => {
@@ -55,9 +56,11 @@ export const Footer = () => {
             rel="noopener noreferrer"
           >
             <img src={data.twitter.publicURL} alt="Twitter logo" />
-          </a>      
+          </a>
         </FooterSocialIcons>
-        <p> © 2021 Gian Carlo L. Baldonado </p>
+        <P size="xSmall" color="black">
+          © 2021 Gian Carlo L. Baldonado
+        </P>
       </FooterSocialWrapper>
     </FooterWrapper>
   )

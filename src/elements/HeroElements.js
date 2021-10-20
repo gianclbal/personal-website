@@ -5,18 +5,23 @@ export const HeroWrapper = styled.section`
     grid-row: 2 / 3;
     padding: 2rem 0;
     position: relative;
+    margin-top: 50px;
 
     @media ${props => props.theme.breakpoints.tablet}{
         grid-column: 2 / span 6;   
     }
 
     h1 {
-        padding: 0.5rem 0;
+        padding: 2rem 0 2.25rem 0;
         font-size: 75px;
     }
+
+    h2 {
+        font-size: 30px;
+    }
     p {
-        max-width: 540px;
-        margin-bottom: 25px;
+        max-width: 560px;
+        margin-bottom: 50px;
     }
 `
 

@@ -8,7 +8,6 @@ export const NavWrapper = styled.nav`
 
   img {
     height: 45px;
-    width: 4.2rem;
     transition: filter 0.3s ease;
     
   }
@@ -21,6 +20,7 @@ export const NavWrapper = styled.nav`
 
   @media ${props => props.theme.breakpoints.tablet} {
     grid-column: 2 / span 6;
+    
   }
 `
 
