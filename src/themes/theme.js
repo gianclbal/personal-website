@@ -9,6 +9,10 @@ export default {
         white: "hsl(240,11%,96%)",
         black: "hsl(240,3%,12%)",
     },
+    borderradius: {
+        button: "5px",
+        pic: "10px",
+    },
     breakpoints: {
         mobile: "only screen and (max-width: 50rem)",
         tablet: "only screen and (max-width: 65rem)",
