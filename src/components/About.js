@@ -4,54 +4,36 @@ import { AboutWrapper, H2, H1, P, LI } from "../elements"
 import { StaticImage } from "gatsby-plugin-image"
 
 const StyledPicture = styled.div`
-  grid-column: 2 / span -1;
   position: relative;
+  justify-content: right;
   max-width: 300px;
 
-  /* @media ${props => props.theme.breakpoints.tablet} {
-      width: 70%;
-    } */
 
-  /* .wrapper {
-    display: block;
-    position: relative;
-    border-radius: ${props => props.theme.borderradius.pic};
-    width: 100%;
-  } */
+  @media ${props => props.theme.breakpoints.tablet} {
+    margin: 50px auto 0;
+    width: 70%;
+  }
 
   .portrait {
     position: relative;
     width: 300px;
+
     border-radius: ${props => props.theme.borderradius.pic};
 
-    @media ${props => props.theme.breakpoints.tablet} {
-      width: 70%;
-    }
-
-    @media ${props => props.theme.breakpoints.mobile} {
-      width: 100%;
-    }
   }
 `
 
 const StyledText = styled.div`
   .tech-list {
     display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
+    grid-template-columns: repeat(2, minmax(200px, 400px));
     grid-gap: 0 10px;
-    margin: 20px;
     list-style: square;
 
     li {
       position: relative;
       margin-bottom: 10px;
       /* padding-left: 20px; */
-    }
-  }
-
-  .p {
-    @media ${props => props.theme.breakpoints.tablet} {
-      width: 40%;
     }
   }
 `

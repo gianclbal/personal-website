@@ -1,11 +1,29 @@
 import styled from "styled-components"
 
-export const NavWrapper = styled.nav`
-  grid-column: 2 / span 12;
-  grid-row: 1 / 2;
+export const NavWrapper = styled.header`
+  display: flex;
+  margin: 0 34px;
+  padding: 0 50px;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100px;
+  backdrop-filter: blur(10px);
 
+  @media ${props => props.theme.breakpoints.tablet} {
+    padding: 0 40px;
+  }
+  @media ${props => props.theme.breakpoints.mobile} {
+    padding: 0 0px;
+  }
+
+`
+
+export const StyledNav = styled.nav`
+  position: relative;
+  width: 100%;
+  color: ${props => props.theme.colors.primary};
   img {
     height: 45px;
     transition: filter 0.3s ease;
@@ -18,48 +36,34 @@ export const NavWrapper = styled.nav`
     }
 
 
-  @media ${props => props.theme.breakpoints.tablet} {
-    grid-column: 2 / span 6;
-    
+` 
+
+export const StyledNavLinks = styled.div`
+  display: flex;
+  align-items: center;
+
+  @media ${props => props.theme.breakpoints.tablet}{
+    display: none;
   }
+
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      margin: 0 5px;
+      position: relative;
+
+      @ {
+        padding: 10px;
+
+        
+      }
+    }
+
+
+  }
+
+
 `
-
-// import styled from 'styled-components';
-
-// export const NavWrapper = styled.nav`
-//     grid-column: 2 / span 12;   //how much space col should take up, starts at 2 spans 12 col.
-//     grid-row: 1 / 2; //starts at 1 spans to 2.
-//     display: flex;
-//     align-items: center;
-
-
-//     @media ${props => props.theme.breakpoints.tablet} {
-//         grid-column: 2 / span 6;
-//     }
-
-//     /* .svg {
-//         width: 45px;
-//         height: 45px;
-//     } */
-
-
-
-// `
-
-
-// /* display: flex;
-//     align-items: center;
-//     color: ${props => props.theme.colors.white};
-//     font-family: ${props => props.theme.fonts.main};
-//     padding: 0px 50px;
-//     width: 100%;
-//     height: 100px;
-//     /* background-color: ${props => props.theme.colors.primary}; */
-//     /* backdrop-filter: blur(10px); */
-// // export const NavWrapper = styled.nav`
-// //     position: relative;
-// //     width: 100%;
-// //     color: ${props => props.theme.colors.white};
-// //     font-family: ${props => props.theme.fonts.main};
-// //     z-index: 1;
-// // ` */
