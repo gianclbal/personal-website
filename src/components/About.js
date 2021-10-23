@@ -34,7 +34,7 @@ const StyledText = styled.div`
       position: relative;
       margin-bottom: 10px;
       /* padding-left: 20px; */
-    } 
+    }
   }
 `
 
@@ -57,8 +57,9 @@ export const About = () => {
   // `)
 
   return (
-    <AboutWrapper>
-      <H2 weight="bold">About Me</H2>
+    <AboutWrapper id="about">
+      <H2 weight="bold">
+       About Me</H2>
       <div className="inner">
         <StyledText>
           <div>

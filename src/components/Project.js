@@ -225,7 +225,7 @@ export const Project = () => {
   }
 
   return (
-    <ProjectWrapper>
+    <ProjectWrapper id="projects">
       <h2>Projects</h2>
 
       <ul className="projects-grid">

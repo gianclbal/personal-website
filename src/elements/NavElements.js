@@ -5,12 +5,12 @@ export const NavWrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  /* margin: 0 34px; */
   z-index: 11;
-  padding: 0 50px;
   width: 100%;
-  height: 100px;
-  backdrop-filter: blur(10px);
+  height: 66px;
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: rgba(255,255,255,0.72);
+  transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
 
   @media ${props => props.theme.breakpoints.tablet} {
     padding: 0 40px;
@@ -26,6 +26,14 @@ export const NavWrapper = styled.header`
 `
 
 export const StyledNav = styled.nav`
+  padding-left: calc(max(22px, env(safe-area-inset-left)));
+  padding-right: calc(max(22px, env(safe-area-inset-right)));
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0 22px;
+  position: relative;
+  z-index: 2;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,7 +42,7 @@ export const StyledNav = styled.nav`
   width: 100%;
   color: ${props => props.theme.colors.primary};
   img {
-    height: 45px;
+    height: 30px;
     transition: filter 0.3s ease;
   }
 
@@ -66,8 +74,29 @@ export const StyledNavLinks = styled.div`
       position: relative;
 
       a {
+
+        
+
         padding: 10px;
+        font-size: 1em;
+        text-decoration: none;
+        color: ${props => props.theme.colors.black};
+        opacity: 1;
+
+        .active {
+          color: blue;
+          text-decoration: underline;
+        }
+
+        
+
+        
       }
+      
+
+      
+
+      
     }
   }
 `
