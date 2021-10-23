@@ -34,7 +34,7 @@ const StyledText = styled.div`
       position: relative;
       margin-bottom: 10px;
       /* padding-left: 20px; */
-    }
+    } 
   }
 `
 
