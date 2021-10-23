@@ -16,6 +16,8 @@ export const P = styled.p`
   }};
   line-height: ${props => {
     switch (props.height) {
+      case "regular":
+        return "1.50rem"
       case "medium":
         return "1.125rem"
       case "small":
@@ -23,7 +25,7 @@ export const P = styled.p`
       case "xSmall":
         return "0.875rem"
       default:
-        return "1.25rem"
+        return "1.50rem"
     }
   }};
   text-decoration: ${props =>
@@ -34,6 +36,8 @@ export const P = styled.p`
         return 300
       case "normal":
         return 400
+      case "semi-bold":
+        return 600
       case "bold":
         return 700
       default:
@@ -78,6 +82,8 @@ export const H1 = styled.h1`
         return 300
       case "normal":
         return 400
+      case "semi-bold":
+        return 600
       case "bold":
         return 700
       default:
@@ -111,6 +117,42 @@ export const H2 = styled.h2`
         return 300
       case "normal":
         return 400
+      case "semi-bold":
+        return 600
+      case "bold":
+        return 700
+      default:
+        return 400
+    }
+  }};
+  text-align: ${props => (props.textAlign ? props.textAlign : "left")};
+  margin: ${props => (props.margin ? props.margin : 0)};
+`
+export const H3 = styled.h3`
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: ${props => {
+    switch (props.color) {
+      case "primary":
+        return props.theme.colors.primary
+      case "accent":
+        return props.theme.colors.accent
+      case "white":
+        return props.theme.colors.white
+      case "black":
+        return props.theme.colors.black
+      default:
+        return props.theme.colors.black
+    }
+  }};
+  font-weight: ${props => {
+    switch (props.weight) {
+      case "light":
+        return 300
+      case "normal":
+        return 400
+      case "semi-bold":
+        return 600
       case "bold":
         return 700
       default:

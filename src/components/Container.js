@@ -1,6 +1,6 @@
 import React from "react"
 import { ContainerWrapper, MainWrapper } from "../elements/"
-import { Nav, Footer, Hero, About, Project } from "../components"
+import { Nav, Footer, Hero, About, Project, Jobs } from "../components"
 
 export const Container = ({ children }) => {
   return (
@@ -9,6 +9,7 @@ export const Container = ({ children }) => {
       <Hero />
       <MainWrapper>
         <About />
+        <Jobs />
         <Project />
       </MainWrapper>
 

@@ -9,6 +9,7 @@ import githubicon from "../images/github.svg"
 const StyledProject = styled.li`
   position: relative;
   cursor: default;
+  
 
   @media (hover: hover) {
     &:hover,

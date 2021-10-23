@@ -3,6 +3,6 @@ export * from "./ContainerElements";
 export * from "./NavElements";
 export * from "./FooterElements";
 export * from "./HeroElements";
-export * from "./AboutElements";
+export * from "./SectionElements";
 export * from "./TypographyElements";
 export * from "./ProjectElement";
