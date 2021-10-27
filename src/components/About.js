@@ -61,8 +61,12 @@ export const About = () => {
   //   }
   // `)
 
+  const AboutWrapper = styled(SectionWrapper)`
+    border-top: 0px;
+  `
+
   return (
-    <SectionWrapper id="about">
+    <AboutWrapper id="about">
       <div className="inner">
         <div className="header">
           <H2 weight="bold">About Me</H2>
@@ -109,7 +113,7 @@ export const About = () => {
           </div>
         </div>
       </div>
-    </SectionWrapper>
+    </AboutWrapper>
   )
 }
 

@@ -9,7 +9,6 @@ import githubicon from "../images/github.svg"
 const StyledProject = styled.li`
   position: relative;
   cursor: default;
-  
 
   @media (hover: hover) {
     &:hover,
@@ -145,7 +144,7 @@ export const Project = () => {
               tech
               github
               external
-              desc
+              # desc
             }
           }
         }
@@ -227,14 +226,21 @@ export const Project = () => {
 
   return (
     <ProjectWrapper id="projects">
-      <h2>Projects</h2>
+      <div className="inner">
+        <div className="header">
+          <h2>Projects</h2>
+        </div>
+        <div>
+        <ul className="projects-grid">
+          {projects &&
+            projects.map(({ node }, i) => (
+              <StyledProject key={i}>{projectInner(node)}</StyledProject>
+            ))}
+        </ul>
+      </div>
 
-      <ul className="projects-grid">
-        {projects &&
-          projects.map(({ node }, i) => (
-            <StyledProject key={i}>{projectInner(node)}</StyledProject>
-          ))}
-      </ul>
+      </div>
+     
     </ProjectWrapper>
   )
 }
