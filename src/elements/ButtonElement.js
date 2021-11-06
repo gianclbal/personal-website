@@ -4,9 +4,9 @@ import { Link } from "gatsby"
 
 export const ButtonWrapper = styled(props => <Link {...props} />)`
   padding: 1rem 1.25rem;
-  background-color: ${props => props.theme.colors.accent};
+  background-color: ${props => props.theme.colors.primary};
   border-radius: ${props => props.theme.borderradius.button};
-  color: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.secondary};
   font-weight: 700;
   font-size: 0.875rem;
   width: fit-content;

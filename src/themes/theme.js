@@ -1,13 +1,15 @@
 export default {
     fonts: {
         main: "Inter, sans-serif",
-        code: "Roboto Mono, monospace",
+        secondary: "Roboto Mono, monospace",
     },
     colors: {
-        primary: "hsl(208,39%,32%)",
-        accent: "hsl(180,45%,54%)",
+        primary: "hsl(61,92%,61%)",
+        secondary: "hsl(240,100%,50%)",
+        accent: "hsl(172,82%,51%)",
         white: "hsl(240,11%,96%)",
-        black: "hsl(240,3%,12%)",
+        blue: "hsl(240, 100%, 50%)",
+        black: "hsl(0,0%,5%)",
     },
     borderradius: {
         button: "5px",

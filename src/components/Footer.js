@@ -58,7 +58,7 @@ export const Footer = () => {
             <img src={data.twitter.publicURL} alt="Twitter logo" />
           </a>
         </FooterSocialIcons>
-        <P size="xSmall" color="black">
+        <P fonts="secondary" size="xSmall" color="white">
           © 2021 Gian Carlo L. Baldonado
         </P>
       </FooterSocialWrapper>

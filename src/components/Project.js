@@ -16,9 +16,11 @@ const StyledProject = styled.li`
       .project-inner {
         transition: transform 0.3s;
         transform: translateY(-7px);
+      }
 
-        a {
-          color: ${props => props.theme.colors.white};
+      .project-header {
+        a :hover {
+          color: ${props => props.theme.colors.black};
         }
       }
     }
@@ -44,12 +46,12 @@ const StyledProject = styled.li`
     position: relative;
     height: 100%;
     padding: 2rem 1.75rem;
-    background-color: ${props => props.theme.colors.accent};
-    border-radius: ${props => props.theme.borderradius.pic};
+    background-color: ${props => props.theme.colors.primary};
+    /* border-radius: ${props => props.theme.borderradius.pic}; */
 
     .project-top {
       display: flex;
-      margin-bottom: 35px;
+      margin-bottom: 20px;
       justify-content: space-between;
 
       .project-icon {
@@ -67,12 +69,8 @@ const StyledProject = styled.li`
         a {
           padding: 5px 7px;
 
-          .external-icon {
-            img {
-              width: 22px;
-              height: 22px;
-              margin-top: -4px;
-            }
+          .github-icon {
+            filter: saturate(100%) brightness(0);
           }
 
           img {
@@ -94,11 +92,11 @@ const StyledProject = styled.li`
 
       :visited {
         text-decoration: none;
-        color: ${props => props.theme.colors.black};
+        color: ${props => props.theme.colors.blue};
       }
 
       :hover {
-        color: ${props => props.theme.colors.white};
+        color: ${props => props.theme.colors.black};
       }
     }
   }
@@ -144,7 +142,7 @@ export const Project = () => {
               tech
               github
               external
-              # desc
+              desc
             }
           }
         }
@@ -160,10 +158,24 @@ export const Project = () => {
 
     return (
       <div className="project-inner">
-        <header>
+        <header className="project-header">
           <div className="project-top">
             <div className="project-icon">
-              <img src={filesicon} alt="files icon" />
+              <H2
+                fonts="secondary"
+                className="project-title"
+                weight="bold"
+                color="white"
+              >
+                <a
+                  href={external ? external : github}
+                  className="project-link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {title}
+                </a>
+              </H2>
             </div>
             <div className="project-links">
               {github && (
@@ -173,7 +185,11 @@ export const Project = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img src={githubicon} alt="github icon" />
+                  <img
+                    className="github-icon"
+                    src={githubicon}
+                    alt="github icon"
+                  />
                 </a>
               )}
               {external && (
@@ -186,26 +202,17 @@ export const Project = () => {
                   <img
                     src={externalicon}
                     alt="external icon"
-                    classNam="external-icon"
+                    className="external-icon"
                   />
                 </a>
               )}
             </div>
           </div>
 
-          <H2 className="project-title" weight="bold" color="white">
-            <a
-              href={external ? external : github}
-              className="project-link"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {title}
-            </a>
-          </H2>
-
           <div className="project-desc">
-            <P size="small">{desc}</P>
+            <P size="small" fonts="secondary">
+              {desc}
+            </P>
           </div>
         </header>
 
@@ -213,8 +220,15 @@ export const Project = () => {
           {tech && (
             <ul className="project-tech-list">
               {tech.map((tech, i) => (
-                <LI size="xSmall" weight="normal" color="primary" key={i}>
-                  {tech}
+                <LI
+                  textTransform="lowercase"
+                  fonts="secondary"
+                  size="xSmall"
+                  weight="bold"
+                  color="black"
+                  key={i}
+                >
+                  /{tech}
                 </LI>
               ))}
             </ul>
@@ -225,22 +239,22 @@ export const Project = () => {
   }
 
   return (
-    <ProjectWrapper id="projects">
+    <ProjectWrapper id="Projects">
       <div className="inner">
         <div className="header">
-          <h2>Projects</h2>
+          <H2 weight="bold" fonts="secondary" color="primary">
+            Projects
+          </H2>
         </div>
         <div>
-        <ul className="projects-grid">
-          {projects &&
-            projects.map(({ node }, i) => (
-              <StyledProject key={i}>{projectInner(node)}</StyledProject>
-            ))}
-        </ul>
+          <ul className="projects-grid">
+            {projects &&
+              projects.map(({ node }, i) => (
+                <StyledProject key={i}>{projectInner(node)}</StyledProject>
+              ))}
+          </ul>
+        </div>
       </div>
-
-      </div>
-     
     </ProjectWrapper>
   )
 }

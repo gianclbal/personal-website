@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import React, {useState, useRef} from "react"
 import styled from "styled-components";
 // import { CSSTransition } from 'react-transition-group';
-import { SectionWrapper, H2, H1, P, LI, H3 } from "../elements"
+import { SectionWrapper, H2, H1, P, LI, H3 } from "../../elements"
 
 const ExperienceWrapper = styled(SectionWrapper)`
   min-height: 0vh;

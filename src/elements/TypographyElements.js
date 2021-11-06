@@ -2,6 +2,16 @@ import styled from "styled-components"
 
 export const P = styled.p`
   margin: ${props => (props.margin ? props.margin : 0)};
+  font-family: ${props => {
+    switch (props.fonts) {
+      case "main":
+        return "Inter, sans-serif"
+      case "secondary":
+        return "Roboto Mono, monospace"
+      default: 
+        return "Inter, sans-serif"
+    }
+  }};
   font-size: ${props => {
     switch (props.size) {
       case "medium":
@@ -16,6 +26,8 @@ export const P = styled.p`
   }};
   line-height: ${props => {
     switch (props.height) {
+      case "comfy":
+        return "1.75rem"
       case "regular":
         return "1.50rem"
       case "medium":
@@ -25,7 +37,7 @@ export const P = styled.p`
       case "xSmall":
         return "0.875rem"
       default:
-        return "1.50rem"
+        return "1.75rem"
     }
   }};
   text-decoration: ${props =>
@@ -55,15 +67,25 @@ export const P = styled.p`
       case "black":
         return props.theme.colors.black
       default:
-        return props.theme.colors.black
+        return props.theme.colors.white
     }
   }};
   text-align: ${props => (props.textAlign ? props.textAlign : "left")};
 `
 
 export const H1 = styled.h1`
+font-family: ${props => {
+    switch (props.fonts) {
+      case "main":
+        return "Inter, sans-serif"
+      case "secondary":
+        return "Roboto Mono, monospace"
+      default: 
+        return "Inter, sans-serif"
+    }
+  }};
   font-size: 2.25rem;
-  line-height: 2.5rem;
+  line-height: 3rem;
   color: ${props => {
     switch (props.color) {
       case "primary":
@@ -74,6 +96,8 @@ export const H1 = styled.h1`
         return props.theme.colors.white
       case "black":
         return props.theme.colors.black
+      default: 
+        return props.theme.colors.white
     }
   }};
   font-weight: ${props => {
@@ -95,8 +119,18 @@ export const H1 = styled.h1`
 `
 
 export const H2 = styled.h2`
+font-family: ${props => {
+    switch (props.fonts) {
+      case "main":
+        return "Inter, sans-serif"
+      case "secondary":
+        return "Roboto Mono, monospace"
+      default: 
+        return "Inter, sans-serif"
+    }
+  }};
   font-size: 1.5rem;
-  line-height: 1.875rem;
+  line-height: 2.5rem;
   color: ${props => {
     switch (props.color) {
       case "primary":
@@ -108,7 +142,7 @@ export const H2 = styled.h2`
       case "black":
         return props.theme.colors.black
       default:
-        return props.theme.colors.black
+        return props.theme.colors.white
     }
   }};
   font-weight: ${props => {
@@ -129,6 +163,16 @@ export const H2 = styled.h2`
   margin: ${props => (props.margin ? props.margin : 0)};
 `
 export const H3 = styled.h3`
+  font-family: ${props => {
+    switch (props.fonts) {
+      case "main":
+        return "Inter, sans-serif"
+      case "secondary":
+        return "Roboto Mono, monospace"
+      default: 
+        return "Inter, sans-serif"
+    }
+  }};
   font-size: 1.25rem;
   line-height: 1.5rem;
   color: ${props => {
@@ -142,7 +186,7 @@ export const H3 = styled.h3`
       case "black":
         return props.theme.colors.black
       default:
-        return props.theme.colors.black
+        return props.theme.colors.white
     }
   }};
   font-weight: ${props => {
@@ -164,7 +208,25 @@ export const H3 = styled.h3`
 `
 
 export const LI = styled.li`
+  text-transform: ${props => {
+    switch (props.textTransform){
+      case "lowercase":
+        return "lowercase"
+      default:
+        return "none"
+    }
+  }};
   margin: ${props => (props.margin ? props.margin : 0)};
+  font-family: ${props => {
+    switch (props.fonts) {
+      case "main":
+        return "Inter, sans-serif"
+      case "secondary":
+        return "Roboto Mono, monospace"
+      default: 
+        return "Inter, sans-serif"
+    }
+  }};
   font-size: ${props => {
     switch (props.size) {
       case "medium":
@@ -214,7 +276,7 @@ export const LI = styled.li`
       case "black":
         return props.theme.colors.black
       default:
-        return props.theme.colors.black
+        return props.theme.colors.white
     }
   }};
   text-align: ${props => (props.textAlign ? props.textAlign : "left")};

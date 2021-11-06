@@ -13,8 +13,6 @@ const StyledPicture = styled.div`
     position: relative;
     width: 300px;
     margin-bottom: 50px;
-
-    border-radius: ${props => props.theme.borderradius.pic};
   }
 `
 
@@ -22,24 +20,29 @@ const StyledText = styled.div`
   h3 {
     margin-bottom: 20px;
   }
-  
+
   p {
     margin-bottom: 20px;
     white-space: pre-line;
   }
 
-  
   .tech-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(200px, 400px));
     grid-gap: 0 10px;
-    list-style: square;
+    list-style: none;
+    margin-bottom: 30px;
 
     li {
       position: relative;
       margin-bottom: 10px;
       /* padding-left: 20px; */
     }
+
+    @media ${props => props.theme.breakpoints.mobile} {
+      display: block;
+    }
+
   }
 `
 
@@ -66,15 +69,16 @@ export const About = () => {
   `
 
   return (
-    <AboutWrapper id="about">
+    <AboutWrapper id="About">
       <div className="inner">
         <div className="header">
-          <H2 weight="bold">About Me</H2>
+          <H2 color="primary" fonts="secondary" weight="bold">
+            About Me
+          </H2>
         </div>
         <div>
           <StyledText>
-            <div>
-              <H3 weight="semi-bold">Bio</H3>
+           
               <P size="small">
                 "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -92,7 +96,7 @@ export const About = () => {
                 exercitationem ullam corporis suscipit laboriosam, nisi ut
                 aliquid ex ea commodi consequatur?
               </P>
-            </div>
+           
           </StyledText>
           <StyledPicture>
             <StaticImage
@@ -101,26 +105,28 @@ export const About = () => {
               alt="Gian's portrait"
             />
           </StyledPicture>
-          <div>
+          
             <StyledText>
-              <H3 weight="semi-bold">Education</H3>
-              <P size="small">B.S. in Computer Science, May 2021<br/>
-             San Francisco State University
-              
+              <H3 color="accent" fonts="secondary" weight="semi-bold">Education</H3>
+              <P size="small">
+                B.S. in Computer Science, May 2021
+                <br />
+                San Francisco State University
               </P>
-              {/* <P size="small">San Francisco State University</P> */}
+              <StyledText>
+            <H3 color="accent" fonts="secondary" weight="semi-bold">Recent technologies used</H3>
+              <ul className="tech-list">
+                {recenttech.map((tech, i) => (
+                  <LI key={i} size="small">
+                    {tech}
+                  </LI>
+                ))}
+              </ul>
             </StyledText>
-          </div>
+            </StyledText>
+          
         </div>
       </div>
     </AboutWrapper>
   )
 }
-
-// <ul className="tech-list">
-// {recenttech.map((tech, i) => (
-//   <LI key={i} size="small">
-//     {tech}
-//   </LI>
-// ))}
-// </ul>

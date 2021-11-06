@@ -1,7 +1,7 @@
-import React from "react"
-import { Scrollspy } from "@makotot/ghostui"
+import React, {useState, useEffect} from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
-import { NavWrapper, StyledNav, StyledNavLinks } from "../elements"
+import { NavWrapper, StyledNav, StyledNavLinks } from "../elements";
+import { MenuItem } from ".";
 
 export const Nav = () => {
 
@@ -13,16 +13,18 @@ export const Nav = () => {
     }
   `)
 
+  
+
   const navLinks = [
     {
       name: "About",
       url: "/#about",
-      id: "about",
+      id: "About",
     },
     {
-      name: "Work",
+      name: "Projects",
       url: "/#projects",
-      id: "projects",
+      id: "Projects",
     },
     {
       name: "Experience",
@@ -42,23 +44,11 @@ export const Nav = () => {
     },
   ]
 
-  // window.onscroll = () => {
-  //   let currentSection = "";
-
-  //   navLinks.map
-  // }
 
   const activeStyles = {
     opacity: 1,
     color: 'blue',
   }
-
-  // const isActive = ({ isCurrent }) => {
-  //   return isCurrent ? { className: "active" } : {}
-  // }
-
-
-
 
 
   return (
@@ -68,25 +58,30 @@ export const Nav = () => {
           <img src={data.logo.publicURL} alt="My Logo" />
         </Link>
         <StyledNavLinks>
-          <ol>
-            {/* <Scrollspy items={navLinks.map(link => link.id)} currentClassName="active"> */}
-            {navLinks.map(({ url, name }, i) => (
-              <li key={i}>
-                <Link
-                  to={url}
-                  // getProps={isActive}
-                  // activeClassName="active"
-                  
-                  // activeStyles={activeStyles}
-                >
-                  {name}
-                </Link>
-              </li>
-            ))}
-            {/* </Scrollspy> */}
-          </ol>
+        <ol>
+           
+           {navLinks.map(({ url, id }, i) => (
+             <MenuItem itemName={id} active={false}/>
+           ))}
+           </ol>
+         
         </StyledNavLinks>
       </StyledNav>
     </NavWrapper>
   )
 }
+
+// <ol>
+           
+// {navLinks.map(({ url, name }, i) => (
+//   <li key={i}>
+//     <Link
+//       to={url}
+     
+//     >
+//       {name}
+//     </Link>
+//   </li>
+// ))}
+
+// </ol>
